@@ -21,7 +21,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <button className='btn btn-danger'>Bootstrap Button</button>
-        <GoatCorral />
+        <GoatCorral goats={this.state.goats}/>
       </div>
     );
   }
