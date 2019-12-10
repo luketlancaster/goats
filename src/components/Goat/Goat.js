@@ -15,6 +15,12 @@ class Goat extends React.Component {
     freeGoat(goat.id);
   }
 
+  takeGoatEvent = (e) => {
+    e.preventDefault();
+    const { takeGoat, goat } = this.props;
+    takeGoat(goat.id);
+  }
+
   render() {
     const { goat } = this.props;
 
@@ -25,7 +31,8 @@ class Goat extends React.Component {
           <h5 className="card-title">{goat.name}</h5>
           <p className="card-text">{goat.age}</p>
           <p className="card-text">{goat.description}</p>
-          <button className="btn btn-danger" onClick={this.freeGoatEvent}>Free Goat</button>
+          <button className="btn btn-success" onClick={this.freeGoatEvent}>Free Goat</button>
+          <button className="btn btn-danger" onClick={this.takeGoatEvent}>Take Goat</button>
         </div>
       </div>
     );
