@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import goatData from '../helpers/data/goatData';
 
 import GoatCorral from '../components/GoatCorral/GoatCorral';
+import GoatCount from '../components/GoatCount/GoatCount';
 
 class App extends React.Component {
   state = {
@@ -36,7 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <button className='btn btn-danger'>Bootstrap Button</button>
+        <GoatCount goats={this.state.goats}/>
         <GoatCorral goats={this.state.goats} freeGoat={this.freeGoat} takeGoat={this.takeGoat}/>
       </div>
     );
