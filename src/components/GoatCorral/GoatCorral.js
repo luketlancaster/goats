@@ -17,7 +17,7 @@ class GoatCorral extends React.Component {
     const goatCards = goats.map((goat) => (<Goat key={goat.id} goat={goat} freeGoat={freeGoat} takeGoat={takeGoat}/>));
 
     return (
-      <div className="goatCorral">
+      <div className="goatCorral row">
         {goatCards}
       </div>
     );
