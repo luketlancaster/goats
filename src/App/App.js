@@ -20,6 +20,16 @@ class App extends React.Component {
   freeGoat = (goatId) => {
     goatData.freeAGoat(goatId);
 
+    this.refreshGoats();
+  }
+
+  takeGoat = (goatId) => {
+    goatData.takeAGoat(goatId);
+
+    this.refreshGoats();
+  }
+
+  refreshGoats = () => {
     this.setState({ goats: goatData.getGoats() });
   }
 
@@ -27,7 +37,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <button className='btn btn-danger'>Bootstrap Button</button>
-        <GoatCorral goats={this.state.goats} freeGoat={this.freeGoat}/>
+        <GoatCorral goats={this.state.goats} freeGoat={this.freeGoat} takeGoat={this.takeGoat}/>
       </div>
     );
   }
